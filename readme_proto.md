@@ -20,10 +20,15 @@ chest_xray
 │   └───NORMAL - 1341 images
 │   └───PNEUMONIA - 3877 images
 └───val
-│   └───NORMAL - 8 images
-│   └───PNEUMONIA - 8 images
+    └───NORMAL - 8 images
+    └───PNEUMONIA - 8 images
 ```
-However, due to class imbalance on the training set, we have augmented "new" images to balance normal and pneumonia images. <br>
+
+
+# Process
+Due to class imbalance on the training set, we have augmented "new" images to balance normal and pneumonia images. <br>
+
+![Original_Dataset_Distribution](IMG/Original_dataset_Distribution.png)
 
 The augmented dataset directory:
 ```
@@ -32,8 +37,7 @@ chest_xray
 │   └───NORMAL - 234 images
 │   └───PNEUMONIA - 390 images
 └───train
-│   └───NORMAL - 3885 images
-│   └───PNEUMONIA - 3885 images
+    └───NORMAL - 3885 images
+    └───PNEUMONIA - 3885 images
 ```
 
-# Process
