@@ -3,10 +3,25 @@
 
 
 # Project
-For this project, our objective is to classify chest x-ray images by first training a Convoluted Neural Network and then predict the image to have pneumonia or not.
+For this project, our objective is to classify chest x-ray images by first training a Convoluted Neural Network and then predict the image to have pneumonia or not. <br>
+
+When a patient is suspected to have pneumonia after clinical examination, it's acceptable to request a chest x-ray. Chest x-rays are useful when diagnosing pneumonia because it's quick, easy, and it can show doctors more than a clinical examination.
+
+# Business Case:
+1. Who is this applicable to?
+    - Doctors
+    - Students
+2. What are we trying to identify?
+    - Classify patients to have pnuemonia, given their x-rays.
+    - Differences of images that the CNN model has classified:
+        - correctly (True Positives and True Negatives)
+        - incorrectly (False Positives and False Negatives)
 
 # Table of Contents
 IMG -- contains images created for EDA
+
+
+
 
 # Data
 The original dataset can be found [here](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) <br>
@@ -24,9 +39,14 @@ chest_xray
     └───NORMAL - 8 images
     └───PNEUMONIA - 8 images
 ```
+<div align="center">Differences between Normal and Pneumonia
+
+![normal_pneumonia](IMG/normal_pneumonia.png)</div>
+
+When trying to detect pneumonia, it's better to first have an expectation of what should be there and then evaluate what's missing. For example, on the left plot, there are clear borders above the diaphragm(bottom of lungs) and its angles. There are also clear boarders around the heart. On the right plot(Pneumonia), the boarders have faded out and we see a lot of extra shadows.
 
 
-# Process
+# Preprocessing
 Looking at the distribution of images available per folder, we need to address 2 things:<br>
 1. Have more validation images
 2. Handle class imbalance
@@ -43,17 +63,17 @@ Due to class imbalance on the training set, we have augmented "new" NORMAL image
 - Mirror the original image
 - Sharpen the orginal image
 
-<p style="text-align: center;">NORMAL Original vs NORMAL Blurred Original</p>
+<div align="center">NORMAL Original vs NORMAL Blurred Original
 
-![Blurred_example](IMG/Blurred_example.png)
+![Blurred_example](IMG/Blurred_example.png)</div>
 
-<p style="text-align: center;">NORMAL Original vs NORMAL Mirrored Original</p>
+<div align="center">NORMAL Original vs NORMAL Mirrored Original
 
-![Mirrored_example](IMG/Mirror_example.png)
+![Mirrored_example](IMG/Mirror_example.png)</div>
 
-<p style="text-align: center;">NORMAL Original vs NORMAL Sharpened Original</p>
+<div align="center">NORMAL Original vs NORMAL Sharpened Original
 
-![Sharpened_example](IMG/Sharpened_example.png)
+![Sharpened_example](IMG/Sharpened_example.png)</div>
 
 
 
@@ -69,6 +89,9 @@ chest_xray
 ```
 
 # Modeling
+We chose to focus on Recall as our primary metric because we are sensitive to False Negatives. (Model predicts normal but is actually pneumonia) We came to this conlusion, because we believe predicting someone to be normal when they were sick is more problematic than an instance of predicting a patient to be sick when they were not.
+
+
 
 # Conclusion
 
