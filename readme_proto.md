@@ -113,7 +113,7 @@ We decided to use ResNet152V2 over the others because the recall and accuracy is
 
 There were also 3 instances where the model predicted normal but but was actually pneumonia.
 
-<img align="center" src="IMG/plot_false_negatives.png" width = "612"> </img>
+<img align="center" src="IMG/plot_false_negatives.png" width = "1024"> </img>
 
 # Conclusion
 Our model was able to predict the unseen test set with minimal False Negatives. 
