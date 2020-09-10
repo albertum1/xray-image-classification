@@ -43,7 +43,7 @@ chest_xray
 
 ![normal_pneumonia](IMG/normal_pneumonia.png)</div>
 
-When trying to detect pneumonia, it's better to first have an expectation of what should be there and then evaluate what's missing. For example, on the left plot, there are clear borders above the diaphragm(bottom of lungs) and its angles. There are also clear boarders around the heart. On the right plot(Pneumonia), the boarders have faded out and we see a lot of extra shadows.
+When trying to detect pneumonia, it's better to first have an expectation of what should be there and then evaluate what's missing. For example, on the left plot, there are clear borders above the diaphragm(bottom of lungs) and its angles. There are also clear borders around the heart. On the right plot(Pneumonia), the boarders have faded out and we see a lot of extra shadows.
 
 
 # Preprocessing
@@ -91,10 +91,20 @@ chest_xray
 # Modeling
 We chose to focus on Recall as our primary metric because we are sensitive to False Negatives. (Model predicts normal but is actually pneumonia) We came to this conlusion, because we believe predicting someone to be normal when they were sick is more problematic than an instance of predicting a patient to be sick when they were not.
 
+For our models, we used one of the pre-made Convolutional Layers from the keras package accompanied with consistent dense layers (4 layers: [(1024,'relu'), (1024,'relu'), (512,'relu'), (1,'sigmoid')])
+
+![models_used](IMG/models_used.png)
+
+
+![models_used](IMG/imagnetv3_cm.png)
 
 
 # Conclusion
+Our model was able to predict the unseen test set with minimal False Negatives. 
 
 # Further Steps
+We would like to train a model using multiple inputs to classify pneumonia. For example, in addition with a front chest x-rays, it would be interesting to input x-rays of the patient's side. 
 
 # Recommendations
+1. Don't diagnose a patient of pneumonia with only a front chest x-ray. Use "probable."
+2. Do use machine learning results as a teaching tool for medical students.
