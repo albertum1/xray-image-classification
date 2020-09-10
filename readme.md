@@ -21,6 +21,7 @@ When a patient is suspected to have pneumonia after clinical examination, it's a
 IMG -- contains images created for EDA
 Models.ipynb -- contains our models
 EDA.ipynb -- contains Exploratory Data Analysis
+readme.md
 
 # Data
 The original dataset can be found [here](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) <br>
@@ -111,9 +112,13 @@ There were also 3 instances where the model predicted normal but but was actuall
 # Conclusion
 Our final model had an Accuracy of 87% and Recall of 98%. Our model was able to predict the unseen test set with minimal False Negatives. With 98% Recall our model is very good at identifying the actual positive(Pneumonia).
 
+When trying to detect pneumonia from front x-rays, it's helpful to look for strong contrasts of color around the borders of the lungs and heart. If the borders are not well defined, then it is probable of pneumonia. However, concluding a patient's health off of one image is dangerous because it's susceptible to error; even with the eye of a seasoned doctor.
+
 # Further Steps
 We would like to train a model using multiple inputs to classify pneumonia. For example, in addition with a front chest x-rays, it would be interesting to input x-rays of the patient's side.
 
 # Recommendations
 1. Don't diagnose a patient of pneumonia with only a front chest x-ray. Use "probable."
 2. Do use machine learning results as a teaching tool for medical students.
+
+Our presentation can be found [here](https://docs.google.com/presentation/d/1bft1ysGvIuf96dhtERN9gCdpDO8nuxPU7yqVhCWQ99Y/edit?usp=sharing) <br>
