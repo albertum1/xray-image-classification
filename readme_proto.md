@@ -91,12 +91,24 @@ chest_xray
 # Modeling
 We chose to focus on Recall as our primary metric because we are sensitive to False Negatives. (Model predicts normal but is actually pneumonia) We came to this conlusion, because we believe predicting someone to be normal when they were sick is more problematic than an instance of predicting a patient to be sick when they were not.
 
-For our models, we used one of the pre-made Convolutional Layers from the keras package accompanied with consistent dense layers (4 layers: [(1024,'relu'), (1024,'relu'), (512,'relu'), (1,'sigmoid')])
+For our models, we used one of the pre-made Convolutional Layers from the keras package accompanied with consistent dense layers.<br>
+(Constant Dense Layers: [<br>
+- (1024,'relu'), 
+- (1024,'relu'), 
+- (512,'relu'), 
+- (1,'sigmoid')])<br>
 
-![models_used](IMG/models_used.png)
 
 
-![models_used](IMG/imagnetv3_cm.png)
+
+
+
+<img align="center" src="IMG/models_used.png" width = "512"> </img>
+
+
+<br>
+
+<img align="center" src="IMG/resnet152_cm.png" width = "512"> </img>
 
 
 # Conclusion
