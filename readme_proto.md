@@ -107,9 +107,13 @@ For our models, we used one of the pre-made Convolutional Layers from the keras 
 
 
 <br>
+We decided to use ResNet152V2 over the others because the recall and accuracy is relatively higher than the other pre-made layers. Although other models may have slightly higher recall than the resnet152, we concluded that the margin was negligible. 
 
 <img align="center" src="IMG/resnet152_cm.png" width = "512"> </img>
 
+There were also 3 instances where the model predicted normal but but was actually pneumonia.
+
+<img align="center" src="IMG/plot_false_negatives.png" width = "612"> </img>
 
 # Conclusion
 Our model was able to predict the unseen test set with minimal False Negatives. 
